@@ -37,15 +37,24 @@ class SecurityController extends AbstractController
     }
 
     #[Route('/connexion', name: 'connexion')]
-    public function index(AuthenticationUtils $authenticationUtils): Response
+    public function connexion(AuthenticationUtils $authenticationUtils): Response
     {
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
+
+        // if($error) {
+        //     dd($error->getMessageKey());
+        // }
     
         return $this->render('security/connexion.html.twig', [
             'last_username' => $lastUsername,
             'error'         => $error,
         ]);
+    }
+
+    #[Route('/logout', name: 'logout')]
+    public function logout()
+    {
     }
 }
 
