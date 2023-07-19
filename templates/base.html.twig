@@ -14,7 +14,7 @@
         <header style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;background:#9b59b6;">
             <span>Ma super app</span>
             <ul>
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                     <a href="{{ path('logout') }}">Déconnexion</a>
                 {% else %}
                     <a href="{{ path('inscription') }}">Inscription</a>
