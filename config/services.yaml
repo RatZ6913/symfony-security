@@ -27,6 +27,10 @@ services:
         resource: ../src/EventListener
         tags: [kernel.event_listener]
 
+    App\EventListener\LoginListener:    
+        tags:
+            - { name: kernel.event_listener, priority: 100 }
+
     # App\EventListener\LoginListener:
     #     tags:
     #         - { name: kernel.event_listener }
