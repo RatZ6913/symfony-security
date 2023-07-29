@@ -13,13 +13,10 @@ class ProfileController extends AbstractController
     #[IsGranted('IS_AUTHENTICATED_FULLY')]
     public function index(): Response
     {
-
-        // $user = $this->getUser();
-        // dump($user);
+        
 
         return $this->render('profile/index.html.twig', [
             'controller_name' => 'ProfileController',
-            // 'user' => $user
         ]);
     }
 }
