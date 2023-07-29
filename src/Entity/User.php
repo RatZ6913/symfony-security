@@ -118,12 +118,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\PrePersist]
     public function doSomething(LifecycleEventArgs $args)
     {
-        dump($args);
+        // dump($args);
     }
 
     #[ORM\PostPersist]
     public function doSomething2(LifecycleEventArgs $args)
     {
-        dd($args);
+        // dd($args);
     }
 }

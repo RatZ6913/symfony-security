@@ -31,6 +31,7 @@ services:
         tags:
             - { name: kernel.event_listener, priority: 100 }
 
-    # App\EventListener\LoginListener:
-    #     tags:
-    #         - { name: kernel.event_listener }
+    App\EventListener\UserCreateListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            
