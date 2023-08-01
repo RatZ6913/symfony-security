@@ -26,11 +26,11 @@ class SecurityController extends AbstractController
         $userForm->handleRequest($request);
 
         if($userForm->isSubmitted() && $userForm->isValid()) {
-            $user->setPassword($passwordHasher->hashPassword($user, $user->getPassword()));
-            $em->persist($user);
-            $em->flush();
-            $eventDispatcher->dispatch(new NewUserEvent($user->getEmail()));
-            return $this->redirectToRoute('home');
+            // $user->setPassword($passwordHasher->hashPassword($user, $user->getPassword()));
+            // $em->persist($user);
+            // $em->flush();
+            // $eventDispatcher->dispatch(new NewUserEvent($user->getEmail()));
+            // return $this->redirectToRoute('home');
         }
 
         return $this->render('security/inscription.html.twig', [
